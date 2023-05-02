@@ -8,12 +8,10 @@ const uglify = require("gulp-uglify");
 var rename = require("gulp-rename");
 const { render } = require("pug");
 
-const origin = "src";
-
 function watcher(cb) {
-  watch(`${origin}/**/*.html`).on("change", series(html, browserSync.reload));
-  watch(`${origin}/scss/**/*.scss`, css);
-  watch(`${origin}/js/*.js`).on("change", series(js, browserSync.reload));
+  watch(`/**/*.html`).on("change", series(html, browserSync.reload));
+  watch(`/scss/**/*.scss`, css);
+  watch(`/js/*.js`).on("change", series(js, browserSync.reload));
   cb();
 }
 
@@ -22,19 +20,19 @@ function server(cb) {
     notify: false,
     open: false,
     server: {
-      baseDir: origin,
+      baseDir: "/",
     },
   });
   cb();
 }
 
 function html(cb) {
-  src(`${origin}/**/*.html`);
+  src(`/**/*.html`);
   cb();
 }
 
 function css(cb) {
-  src(`${origin}/scss/**/*.scss`)
+  src(`/scss/**/*.scss`)
     .pipe(
       sass({
         outputStyle: "expanded",
@@ -43,13 +41,13 @@ function css(cb) {
     .pipe(
       prefix(["last 15 versions", "> 1%", "ie 8", "ie 7"], { cascade: false })
     )
-    .pipe(dest(`${origin}/css/`))
+    .pipe(dest(`/css/`))
     .pipe(browserSync.stream());
   cb();
 }
 
 function js(cb) {
-  src(`${origin}/js/*.js`).pipe(babel({ presets: ["@babel/env"] }));
+  src(`/js/*.js`).pipe(babel({ presets: ["@babel/env"] }));
   cb();
 }
 
