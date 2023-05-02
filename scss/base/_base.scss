@@ -19,6 +19,7 @@ body {
     font-family: 'Mulish', sans-serif;
     font-weight: 400;
     scrollbar-width: none;
+    overflow-x: hidden;
 
     &::-webkit-scrollbar {
         width: 0;
