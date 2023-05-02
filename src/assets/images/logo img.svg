@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 41" width="42" height="42">
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #ffffff } 
+		.txt1 { font-size: 24px;line-height: 20px;fill: #ffffff;font-family: "Muli";text-anchor: end } 
+		.shp2 { fill: none;stroke: #ffffff } 
+	</style>
+	<g id="logo img">
+		<g id="i">
+			<path id="line" class="shp0" d="M11,29h2v-13h-2z" />
+			<path id="dot" class="shp0" d="M11,13c0,0.55 0.45,1 1,1c0.55,0 1,-0.45 1,-1c0,-0.55 -0.45,-1 -1,-1c-0.55,0 -1,0.45 -1,1z" />
+		</g>
+		<text id="D" style="transform: matrix(1,0,0,1,13.96,28.83)" >
+			<tspan x="0" y="0" class="txt1">D</tspan>
+		</text>
+		<path id="frame" class="shp2" d="M0,40h40v-40h-40z" />
+	</g>
+</svg>
